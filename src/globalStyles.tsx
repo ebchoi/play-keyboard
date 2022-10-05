@@ -4,10 +4,13 @@ import reset from 'styled-reset';
 const GlobalStyles = createGlobalStyle`
 *{
     box-sizing: border-box;
-    font-style : normal;
 }
     ${reset}
-
+    
+body{
+  font-style : normal;
+  font-family: 'Noto Sans KR', sans-serif;
+}
     input:focus {
         outline : none;
     }
