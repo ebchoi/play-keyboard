@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { device } from '../styles/theme';
 import NavBar from '../components/navbar.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
@@ -18,7 +19,7 @@ export interface CardProps {
   themeId: string;
 }
 
-const MyTheme: React.FC = () => {
+const WebApp: React.FC = () => {
   const [cards, setCards] = useState([]);
   const getCardInfo = () => {
     axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
@@ -38,25 +39,23 @@ const MyTheme: React.FC = () => {
   };
   return (
     <MyThemeContainer>
-      <MyThemeTop>
-        <MainLogo>
-          <PlayKeyboard />
-        </MainLogo>
-        <SearchIcon onClick={clickSearch}>
-          <Search />
-        </SearchIcon>
-      </MyThemeTop>
-
-      <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
-
-      <Categories />
-
+      <TopNav>
+        <MyThemeTop>
+          <MainLogo>
+            <PlayKeyboard />
+          </MainLogo>
+          <SearchIcon onClick={clickSearch}>
+            <Search />
+          </SearchIcon>
+        </MyThemeTop>
+        <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
+        <Categories />
+      </TopNav>
       <ListLayout>
         {cards.map((cards: any) => (
           <Card card={cards} key={cards.id} />
         ))}
       </ListLayout>
-
       <MainNavigation>
         <NavBar serviceType="MYTHEME" />
       </MainNavigation>
@@ -64,24 +63,44 @@ const MyTheme: React.FC = () => {
   );
 };
 
-export default MyTheme;
+export default WebApp;
 
 const MyThemeContainer = styled.div`
-  width: 373px;
-  height: 100vh;
+  width: 100%;
+  min-width: 375px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: #ffffff;
   font-weight: bold;
-  flex-direction: column;
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  ${device.desktop} {
+    max-width: 420px;
+  }
+
 `;
 
-const MainNavigation = styled.div`
+const TopNav = styled.nav`
   position: fixed;
-  display: flex;
-  bottom: 0px;
-  z-index: 100;
-`;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  min-width: 375px;
 
+  ${device.desktop} {
+    max-width: 420px;
+  }
+`;
 const MyThemeTop = styled.div`
   display: flex;
   justify-content: space-between;
@@ -106,10 +125,24 @@ const MyThemeSpan = styled.div`
 `;
 
 const ListLayout = styled.div`
-  /* top: 30px; */
+  margin: 130px auto 50px;
+  width: 100%;
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.2rem;
-  overflow: hidden;
+  overscroll-behavior: contain;
+`;
+
+const MainNavigation = styled.div`
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  min-width: 375px;
+
+  ${device.desktop} {
+    max-width: 420px;
+  }
 `;

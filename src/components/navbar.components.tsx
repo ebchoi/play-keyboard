@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import styled, { css } from 'styled-components';
+import { device } from '../styles/theme';
 import { ReactComponent as StoreUncolor } from '../images/storeuncolor.svg';
 import { ReactComponent as ChargerUncolor } from '../images/chargeruncolor.svg';
 import { ReactComponent as SettingUncolor } from '../images/settinguncolor.svg';
@@ -88,10 +89,16 @@ const NavBar: React.FC<NavBarProps> = props => {
 export default NavBar;
 
 const PageNaviator = styled.div`
+  width: 100%;
   height: 56px;
   display: flex;
+  justify-content: space-between;
   background-color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; ;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+  ${device.tablet} {
+    justify-content: space-evenly;
+  }
 `;
 
 const NavContainer = styled.div`

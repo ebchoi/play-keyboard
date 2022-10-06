@@ -8,8 +8,8 @@ ${reset}
 }
     
 body{
-  font-style : normal;
-  font-family: 'Noto Sans KR', sans-serif;
+    font-style : normal;
+    font-family: 'Noto Sans KR', sans-serif;
 }
     input:focus {
         outline : none;

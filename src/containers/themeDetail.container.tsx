@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { ReactComponent as BackToolbar } from '../images/detail/ic_toolbar_back.svg';
+import { ReactComponent as AllShare } from '../images/detail/ic_all_share.svg';
 import { colors, device } from '../styles/theme';
 import Hashtag from '../components/hashtag.components';
 import Figure from '../components/themeFigure.components';
@@ -8,6 +11,8 @@ import styled from 'styled-components';
 import { useParams } from 'react-router';
 
 const WebApp: React.FC = () => {
+  const navigator = useNavigate();
+
   // list 페이지에서 detail로 넘어올때 params로 themeId 받아오도록 적용하기
   let { themeId } = useParams();
   // let themeId = 6;
@@ -40,8 +45,15 @@ const WebApp: React.FC = () => {
     getThemeInfoById();
   }, []);
 
+  const goBack = () => {
+    navigator('/');
+  };
+
   return (
     <Wrapper>
+      <BackButton onClick={goBack}>
+        <BackToolbar />
+      </BackButton>
       <PreviewImage src={themeInfo.imageUrl} alt={themeInfo.name} />
       <ThemeInfo>
         <h1>{themeInfo.name}</h1>
@@ -52,6 +64,9 @@ const WebApp: React.FC = () => {
               return <Hashtag key={keyword} keyword={keyword} />;
             })}
         </FlexRow>
+        <ShareButton>
+          <AllShare />
+        </ShareButton>
       </ThemeInfo>
       <AdSpace>AD</AdSpace>
       {themeInfo.isLiveTheme && (
@@ -107,6 +122,7 @@ const Wrapper = styled.main`
   padding: 16px;
   width: 100%;
   min-width: 375px;
+  min-height: 100vh;
   background-color: ${colors.white};
   overflow-y: scroll;
   overscroll-behavior: contain;
@@ -125,6 +141,21 @@ const Wrapper = styled.main`
   }
 `;
 
+const BackButton = styled.div`
+  margin: 20px 0 0 0;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+`;
+
+const ShareButton = styled.div`
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+`;
+
 const FlexDiv = styled.div`
   display: flex;
 `;
@@ -135,6 +166,7 @@ const PreviewImage = styled.img`
 `;
 
 const ThemeInfo = styled(FlexDiv)`
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
