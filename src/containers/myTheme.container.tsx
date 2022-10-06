@@ -54,7 +54,7 @@ const WebApp: React.FC = () => {
         ))}
       </ListLayout>
       <MainNavigation>
-        <NavBar serviceType="MYTHEME" />
+        <NavBar />
       </MainNavigation>
     </MyThemeContainer>
   );
