@@ -17,7 +17,7 @@ const Categories: React.FC = () => {
 export default Categories;
 
 const CategoriesContainer = styled.ul`
-  height: 48px;
+  /* height: 48px; */
   display: flex;
   overflow-x: scroll;
   border: 1px solid blue;
