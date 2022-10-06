@@ -1,8 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
 import styled from 'styled-components';
 import { ReactComponent as IconDownload } from '../images/list/Icon_download.svg';
 import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
-// import axios from 'axios';
-// import { useState, useEffect } from 'react';
 
 interface cardProps {
   imageUrl: string | undefined;
@@ -16,18 +15,18 @@ interface cardProps {
 const Card: React.FC<cardProps> = card => {
   return (
     <Wrapper>
-      <ImageWrapper src={card.imageUrl} alt="keyboard" />
+      <ImageWrapper src={card.card.imageUrl} alt="keyboard" />
       <TextWrapper>
-        <Name>{card.name}</Name>
-        <Tags>{card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags>
+        <Name>{card.card.name}</Name>
+        <Tags>{card.card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags>
         <IconsWrapper>
           <Download>
             <IconDownload />
-            {card.downloads}
+            {card.card.downloads}
           </Download>
           <Price>
             <IconDiamond />
-            {card.price}
+            {card.card.price}
           </Price>
         </IconsWrapper>
       </TextWrapper>
@@ -49,7 +48,6 @@ const ImageWrapper = styled.img`
 
 const TextWrapper = styled.div`
   width: 100%;
-  border: 3px solid red;
   height: 90px;
   display: grid;
 `;
@@ -61,7 +59,6 @@ const Name = styled.div`
   color: #42444c;
 `;
 const Tags = styled.div`
-  /* border: 3px solid blue; */
   margin-bottom: 3px;
   font-weight: 400;
   font-size: 12px;
