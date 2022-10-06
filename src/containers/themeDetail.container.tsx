@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { ReactComponent as BackToolbar } from '../images/detail/ic_toolbar_back.svg';
+import { ReactComponent as AllShare } from '../images/detail/ic_all_share.svg';
 import { colors, device } from '../styles/theme';
 import Hashtag from '../components/hashtag.components';
 import Figure from '../components/themeFigure.components';
@@ -62,6 +63,9 @@ const WebApp: React.FC = () => {
               return <Hashtag key={keyword} keyword={keyword} />;
             })}
         </FlexRow>
+        <ShareButton>
+          <AllShare />
+        </ShareButton>
       </ThemeInfo>
       <AdSpace>AD</AdSpace>
       {themeInfo.isLiveTheme && (
@@ -143,6 +147,14 @@ const BackButton = styled.div`
   cursor: pointer;
 `;
 
+const ShareButton = styled.div`
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+`;
+
 const FlexDiv = styled.div`
   display: flex;
 `;
@@ -153,6 +165,7 @@ const PreviewImage = styled.img`
 `;
 
 const ThemeInfo = styled(FlexDiv)`
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
@@ -180,5 +193,3 @@ const FlexRow = styled.section`
   align-items: center;
   flex-wrap: wrap;
 `;
-
-const ShareButton = styled.svg``;
