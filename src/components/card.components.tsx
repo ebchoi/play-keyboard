@@ -9,8 +9,13 @@ interface CardPageProps {
 }
 
 const Card: React.FC<CardPageProps> = cards => {
+    const handleRouting=()={
+  const themeId = cards.card.themeId
+  console.log( "themeId", themeId)
+    }
+    
   return (
-    <Wrapper>
+    <Wrapper onClick = {handleRouting}>
       <ImageWrapper src={cards.card.imageUrl} alt="keyboard" />
       <TextWrapper>
         <Name>{cards.card.name}</Name>
@@ -36,6 +41,7 @@ const Wrapper = styled.div`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
 `;
+
 const ImageWrapper = styled.img`
   width: 100%;
   border-radius: 10px;

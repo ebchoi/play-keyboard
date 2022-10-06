@@ -7,7 +7,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<List />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:themeId" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
