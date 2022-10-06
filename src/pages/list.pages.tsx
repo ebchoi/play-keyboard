@@ -22,7 +22,7 @@ function List() {
 
   return (
     <Wrapper>
-      <Cards cards={cards} setCards={setCards} />
+      <Cards cards={cards} />
     </Wrapper>
   );
 }
