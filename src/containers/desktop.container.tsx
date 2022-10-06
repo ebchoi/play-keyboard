@@ -2,7 +2,11 @@ import { colors, device } from '../styles/theme';
 import Button from '../components/button.components';
 import styled from 'styled-components';
 
-function Desktop({ children }) {
+interface DesktopProps {
+  children: JSX.Element | JSX.Element[];
+}
+
+const Desktop: React.FC<DesktopProps> = ({ children }) => {
   return (
     <Container>
       <Inner>
@@ -12,7 +16,6 @@ function Desktop({ children }) {
           <FlexRow>
             <StyledButton
               mode="anchor"
-              styledmode="secondary"
               href="https://apps.apple.com/kr/app/playkeyboard-tons-of-themes/id1552856161?l=kr"
               target="_blank"
               rel="noopener noreferrer"
@@ -21,7 +24,6 @@ function Desktop({ children }) {
             </StyledButton>
             <StyledButton
               mode="anchor"
-              styledmode="secondary"
               href="https://play.google.com/store/apps/details?id=kr.bitbyte.playkeyboard"
               target="_blank"
               rel="noopener noreferrer"
@@ -34,7 +36,7 @@ function Desktop({ children }) {
       </Inner>
     </Container>
   );
-}
+};
 export default Desktop;
 
 const Container = styled.div`

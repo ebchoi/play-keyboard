@@ -1,15 +1,27 @@
 import { colors } from '../styles/theme';
 import styled from 'styled-components';
 
-function Reaction({ emoji, reaction, count, selected }) {
+interface ReactionProps {
+  emoji: string;
+  reaction: string;
+  count: number;
+  selected?: boolean;
+}
+
+const Reaction: React.FC<ReactionProps> = ({
+  emoji,
+  reaction,
+  count,
+  selected,
+}) => {
   return (
-    <Wrapper selected={selected ? 1 : 0}>
+    <Wrapper selected={selected ? true : false}>
       <Emoji>{emoji}</Emoji>
       <Text>{reaction}</Text>
       <Count>{count}</Count>
     </Wrapper>
   );
-}
+};
 export default Reaction;
 
 const Wrapper = styled.div`

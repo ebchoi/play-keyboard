@@ -1,19 +1,31 @@
-import { useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { colors, device } from '../styles/theme';
 import Hashtag from '../components/hashtag.components';
 import Figure from '../components/themeFigure.components';
 import Reaction from '../components/emojiButton.components';
 import Button from '../components/button.components';
-
 import styled from 'styled-components';
 
-function WebApp() {
+const WebApp: React.FC = () => {
   // list 페이지에서 detail로 넘어올때 params로 themeId 받아오도록 적용하기
   // let { themeId } = useParams();
   let themeId = 6;
   // themeId = 'OWN_H0-L-39';
-  const [themeInfo, setThemeInfo] = useState([]);
+
+  interface ThemeInfoProps {
+    name: string;
+    creator: string;
+    imageUrl: string;
+    isLiveTheme?: boolean;
+    hashtag?: Array<string>;
+    figure?: {
+      imageUrl: string;
+      keyword: string;
+    };
+  }
+
+  // const [themeInfo, setThemeInfo] = useState<ThemeInfoProps>({});
+  const [themeInfo, setThemeInfo] = useState<{ [key: string]: any }>({});
 
   const getThemeInfoById = async () => {
     // let url = `${process.env.REACT_APP_BASE_URL}/theme/${themeId}`;
@@ -63,10 +75,10 @@ function WebApp() {
         </FlexColumn>
       )}
       <FlexRow>
-        <Reaction emoji="😊" reaction="맘에들어요" count="0" />
-        <Reaction emoji="😍" reaction="심쿵했어요" count="1" selected={true} />
-        <Reaction emoji="😉" reaction="응원해요" count="0" />
-        <Reaction emoji="🤣" reaction="갖고싶어요" count="0" />
+        <Reaction emoji="😊" reaction="맘에들어요" count={0} />
+        <Reaction emoji="😍" reaction="심쿵했어요" count={1} selected={true} />
+        <Reaction emoji="😉" reaction="응원해요" count={0} />
+        <Reaction emoji="🤣" reaction="갖고싶어요" count={0} />
       </FlexRow>
       <FlexColumn>
         <Button
@@ -84,7 +96,7 @@ function WebApp() {
       </FlexColumn>
     </Wrapper>
   );
-}
+};
 export default WebApp;
 
 const Wrapper = styled.main`
