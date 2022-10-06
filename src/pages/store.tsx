@@ -22,7 +22,6 @@ const StoreContainer = styled.div`
   background-color: #ffffff;
   font-size: 100px;
   font-weight: bold;
-  border: 1px solid black;
   font-size: 100px;
   font-weight: bold;
 `;

@@ -55,7 +55,6 @@ const MyTheme: React.FC = () => {
         {cards.map((cards: any) => (
           <Card card={cards} key={cards.id} />
         ))}
-        {/* <Cards cards={cards} /> */}
       </ListLayout>
 
       <MainNavigation>
@@ -107,11 +106,10 @@ const MyThemeSpan = styled.div`
 `;
 
 const ListLayout = styled.div`
-  margin: 0 auto;
-  /* width: 100%; */
+  /* top: 30px; */
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.2rem;
-  overflow: scroll;
+  overflow: hidden;
 `;

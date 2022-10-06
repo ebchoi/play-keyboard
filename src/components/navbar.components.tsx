@@ -98,6 +98,7 @@ const NavContainer = styled.div`
   width: 93px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 const MainContentsPage = styled.div`
