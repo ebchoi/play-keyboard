@@ -2,8 +2,8 @@
 import styled from 'styled-components';
 import { ReactComponent as IconDownload } from '../images/list/Icon_download.svg';
 import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
-import { CardProps } from '../pages/myTheme';
 import { useNavigate } from 'react-router-dom';
+import { CardProps } from '../containers/myTheme.container';
 
 interface CardPageProps {
   card: CardProps;
