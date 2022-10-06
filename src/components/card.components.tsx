@@ -27,10 +27,12 @@ const Card: React.FC<CardPageProps> = cards => {
         <IconsWrapper>
           <Download>
             <IconDownload />
+            <span> </span>
             {cards.card.downloads}
           </Download>
           <Price>
             <IconDiamond />
+            <span> </span>
             {cards.card.price}
           </Price>
         </IconsWrapper>
