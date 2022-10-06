@@ -33,8 +33,8 @@
 
 - 메인 페이지
 ![Screen Shot 2022-10-07 at 4 03 05 AM](https://user-images.githubusercontent.com/100172541/194398321-78985c36-f4f7-4d4c-8891-ae2fdfee1c7d.png)
+![Screen Shot 2022-10-07 at 4 01 08 AM](https://user-images.githubusercontent.com/100172541/194398659-03bd30eb-e0e0-46cf-896e-096729c672b2.png)
 
-![Screen Shot 2022-10-07 at 4 01 08 AM](https://user-images.githubusercontent.com/100172541/194397786-39a52113-1016-411d-b8eb-5c7488cc86d8.png)
 
     - 웹 테마 스토어를 통해 카테고리별 네브바 구현
     - 키보드 기본 정보 카드 뷰로 구현 및 API 연동
