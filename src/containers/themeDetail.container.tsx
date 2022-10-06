@@ -5,11 +5,12 @@ import Figure from '../components/themeFigure.components';
 import Reaction from '../components/emojiButton.components';
 import Button from '../components/button.components';
 import styled from 'styled-components';
+import { useParams } from 'react-router';
 
 const WebApp: React.FC = () => {
   // list 페이지에서 detail로 넘어올때 params로 themeId 받아오도록 적용하기
-  // let { themeId } = useParams();
-  let themeId = 6;
+  let { themeId } = useParams();
+  // let themeId = 6;
   // themeId = 'OWN_H0-L-39';
 
   interface ThemeInfoProps {
