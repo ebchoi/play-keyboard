@@ -5,10 +5,15 @@ import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
 // import { useState, useEffect } from 'react';
 
 interface cardProps {
+  imageUrl: string | undefined;
   card: string;
+  name: string;
+  downloads: string;
+  price: number;
+  hashtag: Array<string>;
 }
 
-function Card({ card }: cardProps) {
+const Card: React.FC<cardProps> = card => {
   return (
     <Wrapper>
       <ImageWrapper src={card.imageUrl} alt="keyboard" />
@@ -28,7 +33,7 @@ function Card({ card }: cardProps) {
       </TextWrapper>
     </Wrapper>
   );
-}
+};
 
 export default Card;
 

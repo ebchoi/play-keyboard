@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavBar from '../components/navbar.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
+import List from './list.pages';
 
 const MyTheme: React.FC = () => {
   return (
@@ -16,6 +17,10 @@ const MyTheme: React.FC = () => {
         </SearchIcon>
       </MyThemeTop>
       <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
+
+      <ListLayout>
+        <List />
+      </ListLayout>
 
       <MainNavigation>
         <NavBar serviceType="MYTHEME" />
@@ -62,6 +67,11 @@ const MyThemeSpan = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 24px;
+  /* line-height: 24px; */
   margin-left: 16px;
+`;
+
+const ListLayout = styled.div`
+  width: 100%;
+  overflow-y: scroll;
 `;
