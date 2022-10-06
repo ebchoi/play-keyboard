@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavBar from '../../components/navbar.components';
-import PlayKeyboard from '../../images/playkeyboard.svg';
-import Search from '../../images/search.svg';
+import NavBar from '../components/navbar.components';
+import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
+import { ReactComponent as Search } from '../images/search.svg';
 
 const MyTheme: React.FC = () => {
   return (
@@ -15,6 +15,8 @@ const MyTheme: React.FC = () => {
           <Search />
         </SearchIcon>
       </MyThemeTop>
+      <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
+
       <MainNavigation>
         <NavBar serviceType="MYTHEME" />
       </MainNavigation>
@@ -32,26 +34,34 @@ const MyThemeContainer = styled.div`
   font-size: 100px;
   font-weight: bold;
   border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 `;
 
 const MainNavigation = styled.div`
-  width: 100%;
   position: fixed;
   display: flex;
   bottom: 0px;
-  margin-left: 80px;
-  /* justify-content: center; */
   z-index: 100;
 `;
 
 const MyThemeTop = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 const MainLogo = styled.div`
-  margin: 0px 221px 0 16px;
+  margin-left: 16px;
 `;
 
 const SearchIcon = styled.div`
   margin-right: 16px;
+`;
+
+const MyThemeSpan = styled.div`
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 16px;
 `;

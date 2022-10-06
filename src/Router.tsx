@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Charge from './pages/charge/charge';
-import MyTheme from './pages/mytheme/myTheme';
-import Setting from './pages/settingPage/setting';
-import Store from './pages/store/store';
+import Charge from './pages/charge';
+import MyTheme from './pages/myTheme';
+import Setting from './pages/setting';
+import Store from './pages/store';
 
 function Router() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavBar from '../../components/navbar.components';
+import NavBar from '../components/navbar.components';
 
 const Store: React.FC = () => {
   return (
@@ -28,11 +28,8 @@ const StoreContainer = styled.div`
 `;
 
 const MainNavigation = styled.div`
-  width: 100%;
   position: fixed;
   display: flex;
   bottom: 0px;
-  margin-left: 80px;
-  /* justify-content: center; */
   z-index: 100;
 `;

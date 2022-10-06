@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import styled, { css } from 'styled-components';
 import { ReactComponent as StoreUncolor } from '../images/storeuncolor.svg';
-// import { ReactComponent as ChargerUncolor } from '../../images/chargeruncolor.svg';
-// import { ReactComponent as SettingUncolor } from '../../images/settinguncolor.svg';
-// import { ReactComponent as MyThemeColor } from '../..//images/mythemecolor.svg';
+import { ReactComponent as ChargerUncolor } from '../images/chargeruncolor.svg';
+import { ReactComponent as SettingUncolor } from '../images/settinguncolor.svg';
+import { ReactComponent as MyThemeColor } from '../images/mythemecolor.svg';
 
 interface NavBarProps {
   serviceType: 'STORE' | 'CHARGE' | 'MYTHEME' | 'SETTING';
@@ -55,22 +55,30 @@ const NavBar: React.FC<NavBarProps> = props => {
   return (
     <PageNaviator>
       <NavContainer onClick={clickStore}>
-        <MainContentsPage>{isStore ? '' : <StoreUncolor />}</MainContentsPage>
+        <MainContentsPage>
+          <StoreUncolor />
+        </MainContentsPage>
         <MainContentPageSpan isStore={isStore}>스토어</MainContentPageSpan>
       </NavContainer>
 
       <NavContainer onClick={clickCharger}>
-        <MainContentsPage>{isCharge ? '' : ''}</MainContentsPage>
+        <MainContentsPage>
+          <ChargerUncolor />
+        </MainContentsPage>
         <MainContentPageSpan isCharger={isCharge}>충전소</MainContentPageSpan>
       </NavContainer>
 
       <NavContainer onClick={clickMyTheme}>
-        <MainContentsPage>{isMyTheme ? '' : ''}</MainContentsPage>
+        <MainContentsPage>
+          <MyThemeColor />
+        </MainContentsPage>
         <MainContentPageSpan isMyTheme={isMyTheme}>MY테마</MainContentPageSpan>
       </NavContainer>
 
       <NavContainer onClick={clickSetting}>
-        <MainContentsPage>{isSetting ? '' : ''}</MainContentsPage>
+        <MainContentsPage>
+          <SettingUncolor />
+        </MainContentsPage>
         <MainContentPageSpan isSetting={isSetting}>설정</MainContentPageSpan>
       </NavContainer>
     </PageNaviator>
@@ -80,20 +88,21 @@ const NavBar: React.FC<NavBarProps> = props => {
 export default NavBar;
 
 const PageNaviator = styled.div`
-  width: 100%;
   height: 56px;
   display: flex;
-  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 `;
 
 const NavContainer = styled.div`
-  border: 1px solid black;
+  width: 93px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const MainContentsPage = styled.div`
-  width: 100px;
-  height: auto;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: center;
 `;
 
 const MainContentPageSpan = styled.div<{
@@ -102,8 +111,6 @@ const MainContentPageSpan = styled.div<{
   isMyTheme?: boolean;
   isSetting?: boolean;
 }>`
-  width: 30px;
-  height: 15px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 500;

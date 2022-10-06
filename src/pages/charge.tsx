@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavBar from '../../components/navbar.components';
+import NavBar from '../components/navbar.components';
 
-const Setting: React.FC = () => {
+const Charge: React.FC = () => {
   return (
-    <SettingContainer>
-      설정페이지
+    <ChargeContainer>
+      충전소 페이지
       <MainNavigation>
-        <NavBar serviceType="SETTING" />
+        <NavBar serviceType="CHARGE" />
       </MainNavigation>
-    </SettingContainer>
+    </ChargeContainer>
   );
 };
 
-export default Setting;
+export default Charge;
 
-const SettingContainer = styled.div`
+const ChargeContainer = styled.div`
   width: 373px;
   height: 100vh;
   margin: 0 auto;
@@ -28,11 +28,8 @@ const SettingContainer = styled.div`
 `;
 
 const MainNavigation = styled.div`
-  width: 100%;
   position: fixed;
   display: flex;
   bottom: 0px;
-  margin-left: 80px;
-  /* justify-content: center; */
   z-index: 100;
 `;
