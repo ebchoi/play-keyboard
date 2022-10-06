@@ -32,8 +32,10 @@
     - 웹에서 레이아웃이 유동적으로 반응하도록 반응형 레이아웃으로 구현
 
 - 메인 페이지
-![Screen Shot 2022-10-07 at 3 47 33 AM](https://user-images.githubusercontent.com/100172541/194397511-eb653d1e-1072-4ba1-bac2-6ba3c7a40f56.png)
+![Screen Shot 2022-10-07 at 4 03 05 AM](https://user-images.githubusercontent.com/100172541/194398321-78985c36-f4f7-4d4c-8891-ae2fdfee1c7d.png)
+
 ![Screen Shot 2022-10-07 at 4 01 08 AM](https://user-images.githubusercontent.com/100172541/194397786-39a52113-1016-411d-b8eb-5c7488cc86d8.png)
+
     - 웹 테마 스토어를 통해 카테고리별 네브바 구현
     - 키보드 기본 정보 카드 뷰로 구현 및 API 연동
     - 각 테마를 클릭시 해당 테마의 상세 화면으로 이동 기능 구현
@@ -42,6 +44,7 @@
 - 상세 페이지
 ![Screen Shot 2022-10-07 at 3 48 41 AM](https://user-images.githubusercontent.com/100172541/194397541-47109432-bb07-485d-baa0-76d1e96858f2.png)
 ![Screen Shot 2022-10-07 at 3 49 23 AM](https://user-images.githubusercontent.com/100172541/194397836-7826c1bd-db8e-4540-a49e-04ae49d5e38a.png)
+
     - 웹 테마 정보 페이지를 통해 테마의 상세 정보 API 연동
     - 동적 라우팅을 통해 첫 번째 화면에서 전달받은 params(themeId)로 테마 상세 정보 조회
     - 상단의 뒤로가기 버튼 클릭 시 첫 번째 화면으로 이동
