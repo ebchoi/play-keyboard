@@ -8,13 +8,11 @@ function List() {
 
   const getCardInfo = () => {
     axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
-      console.log('RES', res.data.data);
       const result = res.data.data;
       const listCards = result.map((card: any) => {
         return card;
       });
       setCards(listCards);
-      console.log('setCards', setCards);
     });
   };
 
