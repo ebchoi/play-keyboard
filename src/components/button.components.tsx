@@ -2,14 +2,28 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { colors } from '../styles/theme';
 
-function Button({ mode, to, fullwidth, children, ...restProps }) {
+interface ButtonProps {
+  mode: string;
+  to?: string;
+  fullwidth?: boolean;
+  children?: JSX.Element | JSX.Element[] | string | string[];
+  restProps?: {};
+}
+
+const Button: React.FC<ButtonProps> = ({
+  mode,
+  to,
+  fullwidth,
+  children,
+  ...restProps
+}) => {
   const Component = modeComponent[mode];
   return (
     <Component fullwidth={fullwidth ? 1 : 0} {...restProps}>
       {children}
     </Component>
   );
-}
+};
 
 export default Button;
 
