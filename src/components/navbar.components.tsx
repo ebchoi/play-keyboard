@@ -90,6 +90,7 @@ export default NavBar;
 const PageNaviator = styled.div`
   height: 56px;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; ;
 `;
 
 const NavContainer = styled.div`
