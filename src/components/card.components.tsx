@@ -2,31 +2,27 @@
 import styled from 'styled-components';
 import { ReactComponent as IconDownload } from '../images/list/Icon_download.svg';
 import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
+import { CardProps } from '../pages/myTheme';
 
-interface cardProps {
-  imageUrl: string | undefined;
-  card: string;
-  name: string;
-  downloads: string;
-  price: number;
-  hashtag: Array<string>;
+interface CardPageProps {
+  card: CardProps;
 }
 
-const Card: React.FC<cardProps> = card => {
+const Card: React.FC<CardPageProps> = cards => {
   return (
     <Wrapper>
-      <ImageWrapper src={card.card.imageUrl} alt="keyboard" />
+      <ImageWrapper src={cards.card.imageUrl} alt="keyboard" />
       <TextWrapper>
-        <Name>{card.card.name}</Name>
-        <Tags>{card.card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags>
+        <Name>{cards.card.name}</Name>
+        <Tags>{cards.card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags>
         <IconsWrapper>
           <Download>
             <IconDownload />
-            {card.card.downloads}
+            {cards.card.downloads}
           </Download>
           <Price>
             <IconDiamond />
-            {card.card.price}
+            {cards.card.price}
           </Price>
         </IconsWrapper>
       </TextWrapper>
@@ -65,6 +61,7 @@ const Tags = styled.div`
   color: #aaabb3;
 `;
 const IconsWrapper = styled.div`
+  line-height: 18px;
   font-weight: 500;
   font-size: 12px;
   display: flex;

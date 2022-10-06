@@ -3,9 +3,19 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import NavBar from '../components/navbar.components';
-import Cards from '../components/cards.components';
+// import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
+import Card from '../components/card.components';
+
+export interface CardProps {
+  imageUrl: string | undefined;
+  card: any;
+  name: string;
+  downloads: string;
+  price: number;
+  hashtag: Array<string>;
+}
 
 const MyTheme: React.FC = () => {
   const [cards, setCards] = useState([]);
@@ -37,7 +47,10 @@ const MyTheme: React.FC = () => {
       <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
 
       <ListLayout>
-        <Cards cards={cards} />
+        {cards.map((cards: any) => (
+          <Card card={cards} key={cards.id} />
+        ))}
+        {/* <Cards cards={cards} /> */}
       </ListLayout>
 
       <MainNavigation>
@@ -56,6 +69,7 @@ const MyThemeContainer = styled.div`
   background-color: #ffffff;
   font-size: 100px;
   font-weight: bold;
+  overflow-y: scroll;
   border: 1px solid black;
 `;
 
@@ -91,5 +105,8 @@ const MyThemeSpan = styled.div`
 const ListLayout = styled.div`
   margin: 0 auto;
   width: 100%;
-  overflow-y: scroll;
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.2rem;
 `;
