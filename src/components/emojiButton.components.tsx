@@ -8,14 +8,9 @@ interface ReactionProps {
   selected?: boolean;
 }
 
-const Reaction: React.FC<ReactionProps> = ({
-  emoji,
-  reaction,
-  count,
-  selected,
-}) => {
+const Reaction: React.FC<ReactionProps> = ({ emoji, reaction, count }) => {
   return (
-    <Wrapper selected={selected ? true : false}>
+    <Wrapper>
       <Emoji>{emoji}</Emoji>
       <Text>{reaction}</Text>
       <Count>{count}</Count>
@@ -30,7 +25,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${({ selected }) => (selected ? colors.pink : '#919299')};
+  color: '#919299';
 `;
 
 const Emoji = styled.div`

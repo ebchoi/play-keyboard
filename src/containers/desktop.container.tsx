@@ -16,22 +16,8 @@ const Desktop: React.FC<DesktopProps> = ({ children }) => {
           </BrandHeader>
           <p>생동감 넘치는 소통의 시작</p>
           <FlexRow>
-            <StyledButton
-              mode="anchor"
-              href="https://apps.apple.com/kr/app/playkeyboard-tons-of-themes/id1552856161?l=kr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              App Store
-            </StyledButton>
-            <StyledButton
-              mode="anchor"
-              href="https://play.google.com/store/apps/details?id=kr.bitbyte.playkeyboard"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Play Store
-            </StyledButton>
+            <StyledButton mode="anchor">App Store</StyledButton>
+            <StyledButton mode="anchor">Play Store</StyledButton>
           </FlexRow>
         </AppInfo>
         {children}
