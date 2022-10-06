@@ -39,7 +39,6 @@ const MyThemeContainer = styled.div`
   font-size: 100px;
   font-weight: bold;
   border: 1px solid black;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 `;
 
 const MainNavigation = styled.div`
