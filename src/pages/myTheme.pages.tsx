@@ -1,10 +1,10 @@
 import Desktop from '../containers/desktop.container';
-import MyTheme from '../containers/myTheme.container';
+import WebApp from '../containers/myTheme.container';
 
 function List() {
   return (
     <Desktop>
-      <MyTheme />
+      <WebApp />
     </Desktop>
   );
 }
