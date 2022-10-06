@@ -1,5 +1,5 @@
 import Desktop from '../containers/desktop.container';
-import WebApp from '../containers/webapp.container';
+import WebApp from '../containers/themeDetail.container';
 
 function Detail() {
   return (

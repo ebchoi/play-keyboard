@@ -11,7 +11,9 @@ const Desktop: React.FC<DesktopProps> = ({ children }) => {
     <Container>
       <Inner>
         <AppInfo>
-          <h1>플레이키보드 웹스토어</h1>
+          <BrandHeader>
+            <span>플레이키보드</span> 웹스토어
+          </BrandHeader>
           <p>생동감 넘치는 소통의 시작</p>
           <FlexRow>
             <StyledButton
@@ -68,6 +70,12 @@ const Inner = styled.div`
   & {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+`;
+
+const BrandHeader = styled.h1`
+  > span {
+    color: ${colors.pink};
   }
 `;
 
