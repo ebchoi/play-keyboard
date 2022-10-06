@@ -72,9 +72,6 @@ const MyThemeContainer = styled.div`
   margin: 0 auto;
   background-color: #ffffff;
   font-weight: bold;
-<<<<<<< HEAD
-  flex-direction: column;
-=======
   overflow-y: scroll;
 
   ::-webkit-scrollbar {
@@ -89,7 +86,6 @@ const MyThemeContainer = styled.div`
   ${device.desktop} {
     max-width: 420px;
   }
->>>>>>> develop
 `;
 
 const TopNav = styled.nav`
@@ -127,19 +123,12 @@ const MyThemeSpan = styled.div`
 `;
 
 const ListLayout = styled.div`
-<<<<<<< HEAD
-  /* top: 30px; */
-=======
   margin: 130px auto 50px;
   width: 100%;
->>>>>>> develop
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.2rem;
-<<<<<<< HEAD
-  overflow: hidden;
-=======
   overscroll-behavior: contain;
 `;
 
@@ -154,5 +143,4 @@ const MainNavigation = styled.div`
   ${device.desktop} {
     max-width: 420px;
   }
->>>>>>> develop
 `;
