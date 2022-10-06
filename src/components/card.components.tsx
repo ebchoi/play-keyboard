@@ -3,14 +3,23 @@ import styled from 'styled-components';
 import { ReactComponent as IconDownload } from '../images/list/Icon_download.svg';
 import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
 import { CardProps } from '../pages/myTheme';
+import { useNavigate } from 'react-router-dom';
 
 interface CardPageProps {
   card: CardProps;
+  key: string;
 }
 
 const Card: React.FC<CardPageProps> = cards => {
+  const navigator = useNavigate();
+
+  const handleRouting = () => {
+    const themeId = cards.card.themeId;
+    navigator(`/theme/${themeId}`);
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onClick={handleRouting}>
       <ImageWrapper src={cards.card.imageUrl} alt="keyboard" />
       <TextWrapper>
         <Name>{cards.card.name}</Name>
@@ -18,10 +27,12 @@ const Card: React.FC<CardPageProps> = cards => {
         <IconsWrapper>
           <Download>
             <IconDownload />
+            <span> </span>
             {cards.card.downloads}
           </Download>
           <Price>
             <IconDiamond />
+            <span> </span>
             {cards.card.price}
           </Price>
         </IconsWrapper>
@@ -35,7 +46,9 @@ export default Card;
 const Wrapper = styled.div`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
+  cursor: pointer;
 `;
+
 const ImageWrapper = styled.img`
   width: 100%;
   border-radius: 10px;

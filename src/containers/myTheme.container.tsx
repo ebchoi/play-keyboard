@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import NavBar from '../components/navbar.components';
-// import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
 import Card from '../components/card.components';
@@ -16,6 +15,7 @@ export interface CardProps {
   downloads: string;
   price: number;
   hashtag: Array<string>;
+  themeId: string;
 }
 
 const MyTheme: React.FC = () => {
