@@ -24,10 +24,7 @@ const WebApp: React.FC = () => {
   const getCardInfo = () => {
     axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
       const result = res.data.data;
-      const listCards = result.map((card: any) => {
-        return card;
-      });
-      setCards(listCards);
+      setCards(result);
     });
   };
   useEffect(() => {
@@ -52,8 +49,8 @@ const WebApp: React.FC = () => {
         <Categories />
       </TopNav>
       <ListLayout>
-        {cards.map((cards: any) => (
-          <Card card={cards} key={cards.id} />
+        {cards.map((card: any) => (
+          <Card card={card} key={card._id} />
         ))}
       </ListLayout>
       <MainNavigation>
