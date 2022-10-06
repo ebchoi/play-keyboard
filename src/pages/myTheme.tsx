@@ -6,10 +6,8 @@ import NavBar from '../components/navbar.components';
 // import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
-<<<<<<< HEAD
-import Categories from '../components/categories.components';
-=======
 import Card from '../components/card.components';
+import Categories from '../components/categories.components';
 
 export interface CardProps {
   imageUrl: string | undefined;
@@ -19,7 +17,6 @@ export interface CardProps {
   price: number;
   hashtag: Array<string>;
 }
->>>>>>> develop
 
 const MyTheme: React.FC = () => {
   const [cards, setCards] = useState([]);
@@ -113,11 +110,8 @@ const MyThemeSpan = styled.div`
 const ListLayout = styled.div`
   margin: 0 auto;
   width: 100%;
-<<<<<<< HEAD
-=======
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.2rem;
->>>>>>> develop
 `;

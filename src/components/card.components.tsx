@@ -4,39 +4,13 @@ import { ReactComponent as IconDownload } from '../images/list/Icon_download.svg
 import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
 import { CardProps } from '../pages/myTheme';
 
-<<<<<<< HEAD
-interface cardProps {
-  imageUrl: string | undefined;
-  name: string;
-  downloads: string;
-  price: number;
-  hashtag: Array<string>;
-=======
 interface CardPageProps {
   card: CardProps;
->>>>>>> develop
 }
 
 const Card: React.FC<CardPageProps> = cards => {
   return (
     <Wrapper>
-<<<<<<< HEAD
-      <ImageWrapper src={card.imageUrl} alt="keyboard" />
-      <TextWrapper>
-        <Name>{card.name}</Name>
-        {/* <Tags>{card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags> */}
-        {card.hashtag.map((tag: string) => (
-          <Tags key={tag.length}>{'#' + tag + ' '}</Tags>
-        ))}
-        <IconsWrapper>
-          <Download>
-            <IconDownload />
-            {card.downloads}
-          </Download>
-          <Price>
-            <IconDiamond />
-            {card.price}
-=======
       <ImageWrapper src={cards.card.imageUrl} alt="keyboard" />
       <TextWrapper>
         <Name>{cards.card.name}</Name>
@@ -49,7 +23,6 @@ const Card: React.FC<CardPageProps> = cards => {
           <Price>
             <IconDiamond />
             {cards.card.price}
->>>>>>> develop
           </Price>
         </IconsWrapper>
       </TextWrapper>
