@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { ReactComponent as BackToolbar } from '../images/detail/ic_toolbar_back.svg';
 import { ReactComponent as AllShare } from '../images/detail/ic_all_share.svg';
 import { colors, device } from '../styles/theme';
@@ -8,41 +8,39 @@ import Figure from '../components/themeFigure.components';
 import Reaction from '../components/emojiButton.components';
 import Button from '../components/button.components';
 import styled from 'styled-components';
-import { useParams } from 'react-router';
 
 const WebApp: React.FC = () => {
   const navigator = useNavigate();
-
-  // list 페이지에서 detail로 넘어올때 params로 themeId 받아오도록 적용하기
   let { themeId } = useParams();
-  // let themeId = 6;
-  // themeId = 'OWN_H0-L-39';
 
-  interface ThemeInfoProps {
+  interface DataProps {
     name: string;
     creator: string;
     imageUrl: string;
     isLiveTheme?: boolean;
     hashtag?: Array<string>;
-    figure?: {
-      imageUrl: string;
-      keyword: string;
-    };
+    figure?: Array<Item>;
   }
 
-  // const [themeInfo, setThemeInfo] = useState<ThemeInfoProps>({});
-  const [themeInfo, setThemeInfo] = useState<{ [key: string]: any }>({});
+  interface Item {
+    imageUrl: string;
+    keyword: string;
+  }
 
-  const getThemeInfoById = async () => {
+  const [data, setData] = useState<DataProps>({});
+  // const [data, setData] = useState < { DataProps } > {};
+
+  const getData = async () => {
     // let url = `${process.env.REACT_APP_BASE_URL}/theme/${themeId}`;
     let url = `https://api.plkey.app/theme/${themeId}`;
     let response = await fetch(url);
     let data = await response.json();
-    setThemeInfo(data.data);
+    setData({ ...data.data });
+    console.log(data);
   };
 
   useEffect(() => {
-    getThemeInfoById();
+    getData();
   }, []);
 
   const goBack = () => {
@@ -54,13 +52,13 @@ const WebApp: React.FC = () => {
       <BackButton onClick={goBack}>
         <BackToolbar />
       </BackButton>
-      <PreviewImage src={themeInfo.imageUrl} alt={themeInfo.name} />
+      <PreviewImage src={data.imageUrl} alt={data.name} />
       <ThemeInfo>
-        <h1>{themeInfo.name}</h1>
-        <div>{themeInfo.creator}</div>
+        <h1>{data.name}</h1>
+        <div>{data.creator}</div>
         <FlexRow>
-          {themeInfo.hashtag &&
-            themeInfo?.hashtag.map(keyword => {
+          {data.hashtag &&
+            data?.hashtag.map((keyword: string) => {
               return <Hashtag key={keyword} keyword={keyword} />;
             })}
         </FlexRow>
@@ -69,16 +67,17 @@ const WebApp: React.FC = () => {
         </ShareButton>
       </ThemeInfo>
       <AdSpace>AD</AdSpace>
-      {themeInfo.isLiveTheme && (
+      {data.isLiveTheme && (
         <FlexColumn>
           <FlexRow>
-            {themeInfo.figure &&
-              themeInfo?.figure.map(figure => {
+            {data.figure &&
+              data?.figure.map((item: Item) => {
+                console.log(item);
                 return (
                   <Figure
-                    key={figure.imageUrl}
-                    keyword={figure.keyword}
-                    imageUrl={figure.imageUrl}
+                    key={item.imageUrl}
+                    keyword={item.keyword}
+                    imageUrl={item.imageUrl}
                   />
                 );
               })}
@@ -97,16 +96,10 @@ const WebApp: React.FC = () => {
         <Reaction emoji="🤣" reaction="갖고싶어요" count={0} />
       </FlexRow>
       <FlexColumn>
-        <Button
-          mode="anchor"
-          styledmode="secondary"
-          href="https://plkey.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Button mode="anchor" styledmode="secondary">
           상품 문의
         </Button>
-        <Button mode="button" type="submit" styledmode="primary" fullwidth>
+        <Button mode="button" styledmode="primary" fullwidth>
           구매 💎7 광고제거 무제한 사용
         </Button>
       </FlexColumn>

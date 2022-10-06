@@ -115,7 +115,7 @@ const SearchIcon = styled.div`
 `;
 
 const MyThemeSpan = styled.div`
-  font-family: 'Noto Sans CJK KR';
+  font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
