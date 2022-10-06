@@ -31,6 +31,7 @@
 - Figma에 주어진 디자인 및 명세와 동일하게 구현
 - 웹에서 레이아웃이 유동적으로 반응하도록 반응형 레이아웃으로 구현
 
+
 ### 메인 페이지
 
 - 웹 테마 스토어를 통해 카테고리별 네브바 구현
@@ -40,6 +41,7 @@
 
 ![Screen Shot 2022-10-07 at 4 03 05 AM](https://user-images.githubusercontent.com/100172541/194398321-78985c36-f4f7-4d4c-8891-ae2fdfee1c7d.png)
 ![Screen Shot 2022-10-07 at 4 01 08 AM](https://user-images.githubusercontent.com/100172541/194398659-03bd30eb-e0e0-46cf-896e-096729c672b2.png)
+
 
 ### 상세 페이지
 
