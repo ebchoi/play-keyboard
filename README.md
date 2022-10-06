@@ -10,6 +10,8 @@
 
 - 기술 스택 : HTML5, React.JS, Typescript, Styled-components
 
+- 프로젝트 구현 사이트 : https://leejulie09.github.io/
+
 ## 2. 팀원 역할 분할
 
 - 초기 세팅: 이주리
