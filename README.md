@@ -50,6 +50,7 @@
 
 ![Screen Shot 2![Screen Shot 2022-10-07 at 3 49 23 AM](https://user-images.githubusercontent.com/100172541/194424074-c902fe03-36cb-4aca-a2db-7ddbb2f4bcad.png)
 022-10-07 at 3 45 56 AM](https://user-images.githubusercontent.com/100172541/194423978-82b55cb6-db7e-4226-8ad4-27086bb8ad9f.png)
-![Uploading Screen Shot 2022-10-07 at 3.49.23 AM.png…]()
+
+![Screen Shot 2022-10-07 at 3 49 23 AM](https://user-images.githubusercontent.com/100172541/194429179-dcab2157-4d16-4e1f-a2d8-80d71011f91b.png)
 
 
