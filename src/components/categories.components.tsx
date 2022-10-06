@@ -7,9 +7,10 @@ const Categories: React.FC = () => {
     '일러스트',
     '기념일',
     '아라찌',
-    '',
+    '밀당해피니스',
+    '이미지',
   ]);
-  return <CategoriesContainer />;
+  return <CategoriesContainer>{categories.map((item) => item}</CategoriesContainer>;
 };
 
 export default Categories;
