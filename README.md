@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# 💻 비트바이트㈜ 기업 과제 | 플레이키보드 웹스토어
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 1. 프로젝트 개요
+과제 주관 : 비트바이트㈜<br>
+작업 기간 : 2022년 10월 2일 ~ 2022년 10월 7일<br />
+참여 인원 : 오창훈, 유관희, 이주리, 장종현, 최은비(PO)<br />
+기술 스택 : <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <br /><br /><br />
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 2. 개발 내용
+* Main 페이지 </br>
+<img src="https://user-images.githubusercontent.com/105952597/194287782-dde06b61-8a25-4bef-b548-c868ccbd18b6.png" width="270" height="600" />
 
-### `npm test`
+- 웹 테마 스토어를 통해 카테고리별로 키보드 테마를 보여줍니다.
+- Figma에 주어진 디자인과 명세대로 구현합니다.
+- 여러 디바이스에서 레이아웃이 깨지지 않도록 반응형 레이아웃으로 구현해야 합니다.
+- 각 테마를 눌렀을 때, 두번째 화면으로 이동합니다.
+    - themeId 필드를 활용하여 라우터를 이동합니다.
+    
+</br></br></br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Detail 페이지 </br>
 
-### `npm run build`
+- **웹 테마 정보 페이지를 통해 테마의 상세 정보를 보여줍니다.**
+    - Figma에 주어진 디자인과 명세대로 구현합니다.
+    - 여러 디바이스에서 레이아웃이 깨지지 않도록 반응형 레이아웃으로 구현해야 합니다.
+    - 동적 라우팅을 통해 첫 번째 화면에서 전달받은 params(themeId)를 활용하여 테마 상세 정보를 불러옵니다.
+    - 상단의 뒤로가기 버튼을 눌렀을 때 **첫 번째 화면**으로 이동해야 합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

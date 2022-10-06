@@ -17,13 +17,11 @@ const Categories: React.FC = () => {
 export default Categories;
 
 const CategoriesContainer = styled.ul`
-  /* height: 48px; */
   display: flex;
-  overflow-x: scroll;
 `;
 
 const Content = styled.li`
-  display: inline-flex;
+  display: flex;
   height: 48px;
   margin-right: 16px;
   font-weight: 400;
@@ -33,5 +31,7 @@ const Content = styled.li`
 
   :first-child {
     margin-left: 16px;
+    color: #ff417d;
+    border-bottom: 2px solid #ff417d;
   }
 `;
