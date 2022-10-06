@@ -6,16 +6,20 @@ import { ReactComponent as Search } from '../images/search.svg';
 import List from './list.pages';
 
 const MyTheme: React.FC = () => {
+  const clickSearch = () => {
+    alert('준비중입니다.');
+  };
   return (
     <MyThemeContainer>
       <MyThemeTop>
         <MainLogo>
           <PlayKeyboard />
         </MainLogo>
-        <SearchIcon>
+        <SearchIcon onClick={clickSearch}>
           <Search />
         </SearchIcon>
       </MyThemeTop>
+
       <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
 
       <ListLayout>
@@ -36,7 +40,6 @@ const MyThemeContainer = styled.div`
   height: 100vh;
   margin: 0 auto;
   background-color: #ffffff;
-  font-size: 100px;
   font-weight: bold;
   border: 1px solid black;
 `;
@@ -51,6 +54,7 @@ const MainNavigation = styled.div`
 const MyThemeTop = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 `;
 
 const MainLogo = styled.div`
@@ -59,6 +63,7 @@ const MainLogo = styled.div`
 
 const SearchIcon = styled.div`
   margin-right: 16px;
+  cursor: pointer;
 `;
 
 const MyThemeSpan = styled.div`
@@ -66,11 +71,11 @@ const MyThemeSpan = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  /* line-height: 24px; */
-  margin-left: 16px;
+  margin: 10px 0 0 16px;
 `;
 
 const ListLayout = styled.div`
   width: 100%;
+  overflow: hidden;
   overflow-y: scroll;
 `;
