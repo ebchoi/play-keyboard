@@ -3,10 +3,23 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import NavBar from '../components/navbar.components';
-import Cards from '../components/cards.components';
+// import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
+<<<<<<< HEAD
 import Categories from '../components/categories.components';
+=======
+import Card from '../components/card.components';
+
+export interface CardProps {
+  imageUrl: string | undefined;
+  card: any;
+  name: string;
+  downloads: string;
+  price: number;
+  hashtag: Array<string>;
+}
+>>>>>>> develop
 
 const MyTheme: React.FC = () => {
   const [cards, setCards] = useState([]);
@@ -42,7 +55,10 @@ const MyTheme: React.FC = () => {
       <Categories />
 
       <ListLayout>
-        <Cards cards={cards} />
+        {cards.map((cards: any) => (
+          <Card card={cards} key={cards.id} />
+        ))}
+        {/* <Cards cards={cards} /> */}
       </ListLayout>
 
       <MainNavigation>
@@ -60,6 +76,7 @@ const MyThemeContainer = styled.div`
   margin: 0 auto;
   background-color: #ffffff;
   font-weight: bold;
+  overflow-y: scroll;
   border: 1px solid black;
 `;
 
@@ -96,4 +113,11 @@ const MyThemeSpan = styled.div`
 const ListLayout = styled.div`
   margin: 0 auto;
   width: 100%;
+<<<<<<< HEAD
+=======
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.2rem;
+>>>>>>> develop
 `;
