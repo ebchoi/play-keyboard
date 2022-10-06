@@ -73,8 +73,7 @@ const MyThemeContainer = styled.div`
   margin: 0 auto;
   background-color: #ffffff;
   font-weight: bold;
-  overflow-y: scroll;
-  border: 1px solid black;
+  flex-direction: column;
 `;
 
 const MainNavigation = styled.div`
@@ -109,9 +108,10 @@ const MyThemeSpan = styled.div`
 
 const ListLayout = styled.div`
   margin: 0 auto;
-  width: 100%;
+  /* width: 100%; */
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.2rem;
+  overflow: scroll;
 `;
