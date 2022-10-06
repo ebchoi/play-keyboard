@@ -7,6 +7,7 @@ import NavBar from '../components/navbar.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
 import Card from '../components/card.components';
+import Categories from '../components/categories.components';
 
 export interface CardProps {
   imageUrl: string | undefined;
@@ -19,7 +20,6 @@ export interface CardProps {
 
 const MyTheme: React.FC = () => {
   const [cards, setCards] = useState([]);
-
   const getCardInfo = () => {
     axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
       const result = res.data.data;
@@ -29,22 +29,27 @@ const MyTheme: React.FC = () => {
       setCards(listCards);
     });
   };
-
   useEffect(() => {
     getCardInfo();
   }, []);
 
+  const clickSearch = () => {
+    alert('준비중입니다.');
+  };
   return (
     <MyThemeContainer>
       <MyThemeTop>
         <MainLogo>
           <PlayKeyboard />
         </MainLogo>
-        <SearchIcon>
+        <SearchIcon onClick={clickSearch}>
           <Search />
         </SearchIcon>
       </MyThemeTop>
+
       <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
+
+      <Categories />
 
       <ListLayout>
         {cards.map((cards: any) => (
@@ -67,7 +72,6 @@ const MyThemeContainer = styled.div`
   height: 100vh;
   margin: 0 auto;
   background-color: #ffffff;
-  font-size: 100px;
   font-weight: bold;
   overflow-y: scroll;
   border: 1px solid black;
@@ -83,6 +87,7 @@ const MainNavigation = styled.div`
 const MyThemeTop = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 `;
 
 const MainLogo = styled.div`
@@ -91,6 +96,7 @@ const MainLogo = styled.div`
 
 const SearchIcon = styled.div`
   margin-right: 16px;
+  cursor: pointer;
 `;
 
 const MyThemeSpan = styled.div`
@@ -98,8 +104,7 @@ const MyThemeSpan = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  /* line-height: 24px; */
-  margin-left: 16px;
+  margin: 10px 0 16px 16px;
 `;
 
 const ListLayout = styled.div`
