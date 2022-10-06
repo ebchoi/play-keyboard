@@ -1,11 +1,8 @@
-import Desktop from '../containers/desktop.container';
-import WebApp from '../containers/webapp.container';
+import styled from 'styled-components';
 
 function Detail() {
-  return (
-    <Desktop>
-      <WebApp />
-    </Desktop>
-  );
+  return <Wrapper>Detail</Wrapper>;
 }
 export default Detail;
+
+const Wrapper = styled.div``;
