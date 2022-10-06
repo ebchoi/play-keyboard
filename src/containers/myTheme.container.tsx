@@ -39,26 +39,23 @@ const WebApp: React.FC = () => {
   };
   return (
     <MyThemeContainer>
-      <MyThemeTop>
-        <MainLogo>
-          <PlayKeyboard />
-        </MainLogo>
-        <SearchIcon onClick={clickSearch}>
-          <Search />
-        </SearchIcon>
-      </MyThemeTop>
-
-      <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
-
-      <Categories />
-
+      <TopNav>
+        <MyThemeTop>
+          <MainLogo>
+            <PlayKeyboard />
+          </MainLogo>
+          <SearchIcon onClick={clickSearch}>
+            <Search />
+          </SearchIcon>
+        </MyThemeTop>
+        <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
+        <Categories />
+      </TopNav>
       <ListLayout>
         {cards.map((cards: any) => (
           <Card card={cards} key={cards.id} />
         ))}
-        {/* <Cards cards={cards} /> */}
       </ListLayout>
-
       <MainNavigation>
         <NavBar serviceType="MYTHEME" />
       </MainNavigation>
@@ -76,7 +73,6 @@ const MyThemeContainer = styled.div`
   background-color: #ffffff;
   font-weight: bold;
   overflow-y: scroll;
-  /* border: 1px solid black; */
 
   ::-webkit-scrollbar {
     display: none;
@@ -92,13 +88,17 @@ const MyThemeContainer = styled.div`
   }
 `;
 
-const MainNavigation = styled.div`
+const TopNav = styled.nav`
   position: fixed;
-  display: flex;
-  bottom: 0px;
-  z-index: 100;
-`;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  min-width: 375px;
 
+  ${device.desktop} {
+    max-width: 420px;
+  }
+`;
 const MyThemeTop = styled.div`
   display: flex;
   justify-content: space-between;
@@ -123,10 +123,24 @@ const MyThemeSpan = styled.div`
 `;
 
 const ListLayout = styled.div`
-  margin: 0 auto;
+  margin: 130px auto 50px;
   width: 100%;
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.2rem;
+  overscroll-behavior: contain;
+`;
+
+const MainNavigation = styled.div`
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  min-width: 375px;
+
+  ${device.desktop} {
+    max-width: 420px;
+  }
 `;
