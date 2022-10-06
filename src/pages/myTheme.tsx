@@ -6,15 +6,10 @@ import NavBar from '../components/navbar.components';
 import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
+import Categories from '../components/categories.components';
 
 const MyTheme: React.FC = () => {
-<<<<<<< HEAD
-  const clickSearch = () => {
-    alert('준비중입니다.');
-  };
-=======
   const [cards, setCards] = useState([]);
-
   const getCardInfo = () => {
     axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
       const result = res.data.data;
@@ -24,12 +19,13 @@ const MyTheme: React.FC = () => {
       setCards(listCards);
     });
   };
-
   useEffect(() => {
     getCardInfo();
   }, []);
 
->>>>>>> develop
+  const clickSearch = () => {
+    alert('준비중입니다.');
+  };
   return (
     <MyThemeContainer>
       <MyThemeTop>
@@ -42,6 +38,8 @@ const MyTheme: React.FC = () => {
       </MyThemeTop>
 
       <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
+
+      <Categories />
 
       <ListLayout>
         <Cards cards={cards} />
@@ -92,7 +90,7 @@ const MyThemeSpan = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  margin: 10px 0 0 16px;
+  margin: 10px 0 16px 16px;
 `;
 
 const ListLayout = styled.div`

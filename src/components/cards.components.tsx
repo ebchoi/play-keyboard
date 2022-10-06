@@ -10,9 +10,8 @@ function Cards({ cards }: cardProps) {
     <Wrapper>
       {cards.map((card: any) => (
         <Card
-          card={card}
           key={card.id}
-          imageUrl={undefined}
+          imageUrl={card.imgUrl}
           name=""
           downloads=""
           price={0}

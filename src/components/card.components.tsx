@@ -5,7 +5,6 @@ import { ReactComponent as IconDiamond } from '../images/list/Icon_diamond.svg';
 
 interface cardProps {
   imageUrl: string | undefined;
-  card: string;
   name: string;
   downloads: string;
   price: number;
@@ -15,18 +14,21 @@ interface cardProps {
 const Card: React.FC<cardProps> = card => {
   return (
     <Wrapper>
-      <ImageWrapper src={card.card.imageUrl} alt="keyboard" />
+      <ImageWrapper src={card.imageUrl} alt="keyboard" />
       <TextWrapper>
-        <Name>{card.card.name}</Name>
-        <Tags>{card.card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags>
+        <Name>{card.name}</Name>
+        {/* <Tags>{card.hashtag.map((tag: string) => '#' + tag + ' ')}</Tags> */}
+        {card.hashtag.map((tag: string) => (
+          <Tags key={tag.length}>{'#' + tag + ' '}</Tags>
+        ))}
         <IconsWrapper>
           <Download>
             <IconDownload />
-            {card.card.downloads}
+            {card.downloads}
           </Download>
           <Price>
             <IconDiamond />
-            {card.card.price}
+            {card.price}
           </Price>
         </IconsWrapper>
       </TextWrapper>
