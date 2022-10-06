@@ -10,7 +10,7 @@
 
 - 기술 스택 : HTML5, React.JS, Typescript, Styled-components
 
-- 프로젝트 구현 사이트 : https://leejulie09.github.io/
+📍 프로젝트 구현 사이트 : https://leejulie09.github.io/
 
 ## 2. 팀원 역할 분할
 
@@ -25,7 +25,7 @@
     - 최은비 : 반응형 구현 및 레이아웃, 뒤로가기
     - 유관희 : 공감 버튼 클릭시 증가 기능
 
-- 취합 및 배포: 최은비, 장종현
+- 취합 및 배포: 최은비, 장종현, 이주리
 
 ## 3. 개발 내용
 
