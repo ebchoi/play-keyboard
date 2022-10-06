@@ -32,6 +32,6 @@ function List() {
 export default List;
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  width: 373px;
 `;

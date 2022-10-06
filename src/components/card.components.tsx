@@ -37,17 +37,16 @@ const Wrapper = styled.div`
   font-style: normal;
 `;
 const ImageWrapper = styled.img`
-  width: 164px;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
 `;
 
 const TextWrapper = styled.div`
-  /* border: 3px solid red; */
-  width: 164px;
+  width: 100%;
 `;
 const Name = styled.div`
-  width: 164px;
+  width: 100%;
   margin: 8px 0 2px 0;
   font-weight: 500;
   font-size: 14px;

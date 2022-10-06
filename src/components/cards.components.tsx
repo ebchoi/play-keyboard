@@ -18,4 +18,9 @@ function Cards({ cards, setCards }: cardProps) {
 
 export default Cards;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.2rem;
+`;
