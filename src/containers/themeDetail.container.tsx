@@ -10,7 +10,7 @@ const WebApp: React.FC = () => {
   // list 페이지에서 detail로 넘어올때 params로 themeId 받아오도록 적용하기
   // let { themeId } = useParams();
   let themeId = 6;
-  // themeId = 'OWN_H0-L-39';
+  themeId = 'OWN_H0-L-39';
 
   interface ThemeInfoProps {
     name: string;
@@ -106,6 +106,7 @@ const Wrapper = styled.main`
   padding: 16px;
   width: 100%;
   min-width: 375px;
+  min-height: 100vh;
   background-color: ${colors.white};
   overflow-y: scroll;
   overscroll-behavior: contain;

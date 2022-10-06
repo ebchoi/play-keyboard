@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { device } from '../styles/theme';
 import NavBar from '../components/navbar.components';
 // import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
@@ -18,7 +19,7 @@ export interface CardProps {
   hashtag: Array<string>;
 }
 
-const MyTheme: React.FC = () => {
+const WebApp: React.FC = () => {
   const [cards, setCards] = useState([]);
   const getCardInfo = () => {
     axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
@@ -65,16 +66,30 @@ const MyTheme: React.FC = () => {
   );
 };
 
-export default MyTheme;
+export default WebApp;
 
 const MyThemeContainer = styled.div`
-  width: 373px;
-  height: 100vh;
+  width: 100%;
+  min-width: 375px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: #ffffff;
   font-weight: bold;
   overflow-y: scroll;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  ${device.desktop} {
+    max-width: 420px;
+  }
 `;
 
 const MainNavigation = styled.div`
