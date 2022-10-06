@@ -76,6 +76,4 @@ const MyThemeSpan = styled.div`
 
 const ListLayout = styled.div`
   width: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
 `;
