@@ -17,6 +17,9 @@ body{
     button {
         cursor : pointer;
     }
+    a {
+        color: inherit;
+    }
     .no-drag {-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;};
 `;
 
