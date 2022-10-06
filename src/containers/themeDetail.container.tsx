@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { ReactComponent as BackToolbar } from '../images/detail/ic_toolbar_back.svg';
 import { colors, device } from '../styles/theme';
 import Hashtag from '../components/hashtag.components';
 import Figure from '../components/themeFigure.components';
@@ -7,10 +9,12 @@ import Button from '../components/button.components';
 import styled from 'styled-components';
 
 const WebApp: React.FC = () => {
+  const navigator = useNavigate();
+
   // list 페이지에서 detail로 넘어올때 params로 themeId 받아오도록 적용하기
   // let { themeId } = useParams();
   let themeId = 6;
-  themeId = 'OWN_H0-L-39';
+  // themeId = 'OWN_H0-L-39';
 
   interface ThemeInfoProps {
     name: string;
@@ -39,8 +43,15 @@ const WebApp: React.FC = () => {
     getThemeInfoById();
   }, []);
 
+  const goBack = () => {
+    navigator('/');
+  };
+
   return (
     <Wrapper>
+      <BackButton onClick={goBack}>
+        <BackToolbar />
+      </BackButton>
       <PreviewImage src={themeInfo.imageUrl} alt={themeInfo.name} />
       <ThemeInfo>
         <h1>{themeInfo.name}</h1>
@@ -125,6 +136,13 @@ const Wrapper = styled.main`
   }
 `;
 
+const BackButton = styled.div`
+  margin: 20px 0 0 0;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+`;
+
 const FlexDiv = styled.div`
   display: flex;
 `;
@@ -162,3 +180,5 @@ const FlexRow = styled.section`
   align-items: center;
   flex-wrap: wrap;
 `;
+
+const ShareButton = styled.svg``;
