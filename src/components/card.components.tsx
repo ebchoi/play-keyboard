@@ -44,7 +44,6 @@ const ImageWrapper = styled.img`
 
 const TextWrapper = styled.div`
   width: 100%;
-  border: 3px solid red;
   height: 90px;
   display: grid;
 `;
