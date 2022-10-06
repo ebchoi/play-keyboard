@@ -1,11 +1,29 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import NavBar from '../components/navbar.components';
+import Cards from '../components/cards.components';
 import { ReactComponent as PlayKeyboard } from '../images/playkeyboard.svg';
 import { ReactComponent as Search } from '../images/search.svg';
-import List from './list.pages';
 
 const MyTheme: React.FC = () => {
+  const [cards, setCards] = useState([]);
+
+  const getCardInfo = () => {
+    axios.get('https://api.plkey.app/theme?category=LIVE').then(res => {
+      const result = res.data.data;
+      const listCards = result.map((card: any) => {
+        return card;
+      });
+      setCards(listCards);
+    });
+  };
+
+  useEffect(() => {
+    getCardInfo();
+  }, []);
+
   return (
     <MyThemeContainer>
       <MyThemeTop>
@@ -19,7 +37,7 @@ const MyTheme: React.FC = () => {
       <MyThemeSpan>취향대로 골라보기</MyThemeSpan>
 
       <ListLayout>
-        <List />
+        <Cards cards={cards} />
       </ListLayout>
 
       <MainNavigation>
@@ -71,6 +89,7 @@ const MyThemeSpan = styled.div`
 `;
 
 const ListLayout = styled.div`
+  margin: 0 auto;
   width: 100%;
   overflow-y: scroll;
 `;
