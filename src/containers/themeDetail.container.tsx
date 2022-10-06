@@ -30,7 +30,7 @@ const WebApp: React.FC = () => {
   const [data, setData] = useState<DataProps>();
 
   const getData = async () => {
-    let url = `${process.env.REACT_APP_BASE_URL}/theme/${themeId}`;
+    let url = `https://api.plkey.app/theme/${themeId}`;
     let response = await fetch(url);
     let data = await response.json();
     setData({ ...data.data });
