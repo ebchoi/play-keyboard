@@ -2,11 +2,15 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
-*{
-    box-sizing: border-box;
-    font-style : normal;
-}
+
     ${reset}
+    *{
+        box-sizing: border-box;
+        font-style : normal;
+    }
+    body{
+        font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    }
 
     input:focus {
         outline : none;

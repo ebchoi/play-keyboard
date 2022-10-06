@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import List from './pages/list.pages';
 import Detail from './pages/detail.pages';
+
 function Router() {
   return (
     <BrowserRouter>
