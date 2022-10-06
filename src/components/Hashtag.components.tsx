@@ -1,7 +1,7 @@
 import { colors } from '../styles/theme';
 import styled from 'styled-components';
 
-function Hashtag({ keyword }) {
+function Hashtag({ keyword }: { keyword: string }) {
   return <Span>{keyword}</Span>;
 }
 export default Hashtag;
