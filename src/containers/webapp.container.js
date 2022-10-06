@@ -5,7 +5,7 @@ import Hashtag from '../components/hashtag.components';
 import Figure from '../components/themeFigure.components';
 import Reaction from '../components/emojiButton.components';
 import Button from '../components/button.components';
-
+import './webapp.css';
 import styled from 'styled-components';
 
 function WebApp() {
@@ -14,7 +14,10 @@ function WebApp() {
   let themeId = 6;
   // themeId = 'OWN_H0-L-39';
   const [themeInfo, setThemeInfo] = useState([]);
-
+  const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [count3, setCount3] = useState(0);
   const getThemeInfoById = async () => {
     // let url = `${process.env.REACT_APP_BASE_URL}/theme/${themeId}`;
     let url = `https://api.plkey.app/theme/${themeId}`;
@@ -27,6 +30,19 @@ function WebApp() {
     getThemeInfoById();
   }, []);
 
+  const increaseMind = () => {
+    setCount(count + 1);
+    console.log('맘에 들어요');
+  };
+  const increaseSim = () => {
+    setCount1(count1 + 1);
+  };
+  const increaseCheer = () => {
+    setCount2(count2 + 1);
+  };
+  const increaseWant = () => {
+    setCount3(count3 + 1);
+  };
   return (
     <Wrapper>
       <PreviewImage src={themeInfo.imageUrl} alt={themeInfo.name} />
@@ -63,10 +79,30 @@ function WebApp() {
         </FlexColumn>
       )}
       <FlexRow>
-        <Reaction emoji="😊" reaction="맘에들어요" count="0" />
-        <Reaction emoji="😍" reaction="심쿵했어요" count="1" selected={true} />
-        <Reaction emoji="😉" reaction="응원해요" count="0" />
-        <Reaction emoji="🤣" reaction="갖고싶어요" count="0" />
+        {/* <button className="button" onClick={increaseMind} /> */}
+        <div onClick={increaseMind}>
+          <Reaction emoji="😉" />
+          <span className="center">맘에들어요</span> <br />
+          {count}
+        </div>
+        <div onClick={increaseSim}>
+          <Reaction emoji="😍" selected={true} />
+          <span className="center">심쿵했어요</span>
+
+          {count1}
+        </div>
+        <div onClick={increaseCheer}>
+          <Reaction emoji="😉" reaction="" />
+          <span className="center">응원해요</span>
+
+          {count2}
+        </div>
+        <div onClick={increaseWant}>
+          <Reaction emoji="🤣" reaction="" />
+          <span className="center">갖고싶어요 </span>
+
+          {count3}
+        </div>
       </FlexRow>
       <FlexColumn>
         <Button

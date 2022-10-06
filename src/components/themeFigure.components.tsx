@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function Figure({ imageUrl, keyword }) {
+function Figure({ imageUrl, keyword }: { imageUrl: string; keyword: string }) {
   return <Image src={imageUrl} alt={keyword} />;
 }
 export default Figure;
