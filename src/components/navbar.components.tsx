@@ -18,65 +18,65 @@ const NavBar: React.FC<NavBarProps> = props => {
   const [isSetting, setIsSetting] = useState<boolean>(false);
   const navigator = useNavigate();
 
-  const clickStore = () => {
-    setIsStore(true);
-    navigator('/store');
-  };
+  // const clickStore = () => {
+  //   setIsStore(true);
+  //   navigator('/store');
+  // };
 
-  const clickCharger = () => {
-    setIsCharge(true);
-    navigator('/charge');
-  };
+  // const clickCharger = () => {
+  //   setIsCharge(true);
+  //   navigator('/charge');
+  // };
 
-  const clickMyTheme = () => {
-    setIsMyTheme(true);
-    navigator('/');
-  };
+  // const clickMyTheme = () => {
+  //   setIsMyTheme(true);
+  //   navigator('/');
+  // };
 
-  const clickSetting = () => {
-    setIsSetting(true);
-    navigator('/setting');
-  };
+  // const clickSetting = () => {
+  //   setIsSetting(true);
+  //   navigator('/setting');
+  // };
 
-  useEffect(() => {
-    if (props.serviceType === 'STORE') {
-      setIsStore(true);
-    }
-    if (props.serviceType === 'CHARGE') {
-      setIsCharge(true);
-    }
-    if (props.serviceType === 'MYTHEME') {
-      setIsMyTheme(true);
-    }
-    if (props.serviceType === 'SETTING') {
-      setIsSetting(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (props.serviceType === 'STORE') {
+  //     setIsStore(true);
+  //   }
+  //   if (props.serviceType === 'CHARGE') {
+  //     setIsCharge(true);
+  //   }
+  //   if (props.serviceType === 'MYTHEME') {
+  //     setIsMyTheme(true);
+  //   }
+  //   if (props.serviceType === 'SETTING') {
+  //     setIsSetting(true);
+  //   }
+  // }, []);
 
   return (
     <PageNaviator>
-      <NavContainer onClick={clickStore}>
+      <NavContainer>
         <MainContentsPage>
           <StoreUncolor />
         </MainContentsPage>
         <MainContentPageSpan isStore={isStore}>스토어</MainContentPageSpan>
       </NavContainer>
 
-      <NavContainer onClick={clickCharger}>
+      <NavContainer>
         <MainContentsPage>
           <ChargerUncolor />
         </MainContentsPage>
-        <MainContentPageSpan isCharger={isCharge}>충전소</MainContentPageSpan>
+        <MainContentPageSpan>충전소</MainContentPageSpan>
       </NavContainer>
 
-      <NavContainer onClick={clickMyTheme}>
+      <NavContainer>
         <MainContentsPage>
           <MyThemeColor />
         </MainContentsPage>
         <MainContentPageSpan isMyTheme={isMyTheme}>MY테마</MainContentPageSpan>
       </NavContainer>
 
-      <NavContainer onClick={clickSetting}>
+      <NavContainer>
         <MainContentsPage>
           <SettingUncolor />
         </MainContentsPage>
@@ -105,6 +105,7 @@ const NavContainer = styled.div`
   width: 93px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 const MainContentsPage = styled.div`
